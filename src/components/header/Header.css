@@ -1,0 +1,44 @@
+
+.header-container{
+    margin-top: 80px;
+    width: 100%;
+    height: 80vh;
+    background-image: url("/pexels-shvets-2563386.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    
+}
+
+.header-container > div{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-container-heading{
+    font-size: clamp(2.5rem, 1.094rem + 7.5vw, 10rem);
+    line-height: 0.8;
+}
+
+.header-container-heading-second{
+    padding-left: 15vw;
+    font-size: clamp(2.5rem, 1.094rem + 7.5vw, 10rem);   
+    line-height: 0.8;
+}
+
+.header-paragraph{
+    font-size: 16px;
+    padding-top: 15px;
+    font-weight: 200;
+    width: 72%;
+}
+
+@media (min-width: 768px){
+    .header-paragraph{
+        width: 60%;
+    }
+}

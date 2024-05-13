@@ -1,0 +1,31 @@
+.gallery-image-container-image{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-image-container-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-image-container-inner{
+    width: 100%;
+    padding: 10px;
+    height: fit-content;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.gallery-image-container-inner-paragraph{
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.gallery-image-container-inner-paragraph-second{
+    font-weight: 200;
+    font-size: 18px;
+}

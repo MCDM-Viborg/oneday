@@ -1,0 +1,10 @@
+
+.aboutContainer{
+    width: 100%;
+}
+
+.aboutContainer-inner{
+    padding: 100px 0;
+    width: 80%;
+    margin: 0 auto;
+}

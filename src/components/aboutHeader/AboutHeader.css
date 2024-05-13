@@ -1,0 +1,24 @@
+.aboutContainer-header{
+    margin-top: 80px;
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.aboutContainer-header-heading{
+    font-size: 60px;
+}
+
+.aboutContainer-header-text{
+   width: 100%;
+}
+
+@media (min-width: 768px){
+    .aboutContainer-header-text{
+        width: 60%;
+    }
+}
