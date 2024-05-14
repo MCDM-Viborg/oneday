@@ -3,6 +3,7 @@ import Footer from "../components/footer/Footer";
 import GallerySection from "../components/gallerySection/GallerySection";
 import Header from "../components/header/Header";
 import Navigation from "../components/navigation/Navigation";
+import Slider from "../components/slider/Slider";
 
 
 export function Home(){
@@ -76,6 +77,7 @@ export function Home(){
           <GallerySection data={afternoon} time={"15:00 - 18:00"} description={"EFTERMIDDAG"}></GallerySection>
           <GallerySection data={evening} time={"18:00 - 21:00"} description={"TIDLIG AFTEN"}></GallerySection>
           <GallerySection data={lateevening} time={"21:00 - 24:00"} description={"SEN AFTEN"}></GallerySection>
+          <Slider></Slider>
           <Footer></Footer>
           </div>
       )
