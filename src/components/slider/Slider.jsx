@@ -1,34 +1,45 @@
-import { useEffect, useState } from "react"
-import "./Slider.css"
-
+import { useEffect, useState } from "react";
+import "./Slider.css";
 
 const Slider = () => {
-    const [moments, setMoments] = useState(null);
+  const [moments, setMoments] = useState(null);
 
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments")
-       .then((res) => {return res.json();}).then((data) => {setMoments(data);});
-      }, []);
+  useEffect(() => {
+    fetch("https://onedayviborg.webmcdm.dk/api/moments")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setMoments(data);
+      });
+  }, []);
 
-    const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            let randomNumber = Math.floor(Math.random() * moments.length)
-            setIndex(randomNumber);
-        }, 5000);
- 
-        
-        return () => clearInterval(interval);
-    },[index, moments]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      let randomNumber = Math.floor(Math.random() * moments.length);
+      setIndex(randomNumber);
+    }, 5000);
 
-      if(moments){
-          return <div className="sliderContainer">
-                    <img className="sliderimage" src={moments[index].picture} alt=""></img>
-                    <p className="slidertext">{moments[index].title}</p>
-                </div>
-      }
+    return () => clearInterval(interval);
+  }, [index, moments]);
 
-  
-}
- export default Slider;
+  if (moments) {
+    return (
+      <>
+        <div className='sliderContainer'>
+          <img
+            className='sliderimage'
+            src={moments[index].picture}
+            alt=''></img>
+          <figcaption>
+            <p className='slidertext'>{moments[index].title}</p>
+            <p className='momentTime'>Kl. {moments[index].time}</p>
+          </figcaption>
+        </div>
+      </>
+    );
+  }
+};
+export default Slider;
