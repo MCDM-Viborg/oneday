@@ -89,7 +89,7 @@ export function Home() {
   }, [data, thresholds]);
 
   return (
-    <div>
+    <>
       <Header />
       {data && (
         <>
@@ -103,6 +103,6 @@ export function Home() {
           ))}
         </>
       )}
-    </div>
+    </>
   );
 }

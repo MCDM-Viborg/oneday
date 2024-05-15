@@ -1,17 +1,24 @@
-.container{
-    padding: 20px 50px;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;   
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 100;
+.container {
+  padding: 20px 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 100;
 }
 
-.nav-logo{
-    width: 200px;
+.logo {
+  visibility: hidden;
+  transition: visibility 0.3s ease-in-out;
+  width: 200px;
+}
+
+.logo-visible {
+  visibility: visible;
+  transition: visibility 0.3s ease-in-out;
 }

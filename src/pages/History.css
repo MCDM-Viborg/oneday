@@ -6,6 +6,7 @@
   min-height: 100vh;
   align-content: start;
   padding-bottom: 5em;
+  padding-top: 2em;
 }
 
 .historyContainer-inner {
