@@ -1,9 +1,15 @@
-.historyContainer{
-    width: 100%;
+.historyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  align-content: start;
+  padding-bottom: 5em;
 }
 
-.historyContainer-inner{
-    padding: 100px 0;
-    width: 80%;
-    margin: 0 auto;
+.historyContainer-inner {
+  padding: 100px 0;
+  width: 80%;
+  margin: 0 auto;
 }

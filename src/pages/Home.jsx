@@ -1,88 +1,107 @@
-import { useEffect, useState } from "react";
-import Footer from "../components/footer/Footer";
-import GallerySection from "../components/gallerySection/GallerySection";
-import Header from "../components/header/Header";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import Navigation from "../components/navigation/Navigation";
+import Header from "../components/header/Header";
+import GallerySection from "../components/gallerySection/GallerySection";
 import Slider from "../components/slider/Slider";
+import Footer from "../components/footer/Footer";
 
+export function Home() {
+  const [data, setData] = useState([]);
 
-export function Home(){
-  const [night, setNight] = useState(null);
+  useEffect(() => {
+    fetch("https://onedayviborg.webmcdm.dk/api/moments")
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
 
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments?start=00:00&end=03:00&date=2022-05-11")
-       .then((res) => {return res.json();}).then((data) => {setNight(data);});
-      }, []);
+  // Omregn time-strengen til tal
+  const timeToMinutes = useCallback((timeString) => {
+    const [hours, minutes] = timeString.split(":").map(Number);
+    return hours * 60 + minutes;
+  }, []);
 
-      const [morningone, setMorningone] = useState(null);
+  // Omregn tal til time-streng
+  const timeFromMinutes = useCallback((minutes) => {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return `${hours.toString().padStart(2, "0")}:${mins
+      .toString()
+      .padStart(2, "0")}`;
+  }, []);
 
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments?start=03:00&end=06:00&date=2022-05-11")
-       .then((res) => {return res.json();}).then((data) => {setMorningone(data);});
-      }, []);
+  // Filtrer data efter tidspunkt og gør det kun når timeToMinutes-funktionen kaldes
+  const thresholds = useMemo(
+    () => ({
+      night: { start: 0, end: timeToMinutes("03:00"), label: "Nat i Viborg" },
+      earlyMorning: {
+        start: timeToMinutes("03:00"),
+        end: timeToMinutes("06:00"),
+        label: "De tidlige morgentimer",
+      },
+      morning: {
+        start: timeToMinutes("06:00"),
+        end: timeToMinutes("09:00"),
+        label: "Morgen",
+      },
+      beforeDinner: {
+        start: timeToMinutes("09:00"),
+        end: timeToMinutes("12:00"),
+        label: "Formiddag",
+      },
+      noon: {
+        start: timeToMinutes("12:00"),
+        end: timeToMinutes("15:00"),
+        label: "Middagstimerne",
+      },
+      afterNoon: {
+        start: timeToMinutes("15:00"),
+        end: timeToMinutes("18:00"),
+        label: "Eftermiddag",
+      },
+      earlyEvening: {
+        start: timeToMinutes("18:00"),
+        end: timeToMinutes("21:00"),
+        label: "De tidlige aftentimer",
+      },
+      lateEvening: {
+        start: timeToMinutes("21:00"),
+        end: timeToMinutes("24:00"),
+        label: "De sene aftentimer",
+      },
+    }),
+    [timeToMinutes]
+  );
 
-      const [morning, setMorning] = useState(null);
+  // Filtrer data indenfor de bestemte tidsintervaller og gør det kun hvis data ændres
+  const filteredData = useMemo(() => {
+    const filtered = {};
+    Object.keys(thresholds).forEach((period) => {
+      const { start, end, label } = thresholds[period];
+      filtered[period] = {
+        items: data.filter((d) => {
+          const itemMinutes = timeToMinutes(d.time);
+          return itemMinutes >= start && itemMinutes < end;
+        }),
+        label,
+        time: `${timeFromMinutes(start)} - ${timeFromMinutes(end)}`,
+      };
+    });
+    return filtered;
+  }, [data, thresholds]);
 
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments?start=06:00&end=09:00&date=2022-05-11")
-       .then((res) => {return res.json();}).then((data) => {setMorning(data);});
-      }, []);
-
-      const [beforedinner, setBeforedinner] = useState(null);
-
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments?start=09:00&end=12:00&date=2022-05-11")
-       .then((res) => {return res.json();}).then((data) => {setBeforedinner(data);});
-      }, []);
-
-      const [midday, setMidday] = useState(null);
-
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments?start=12:00&end=15:00&date=2022-05-11")
-       .then((res) => {return res.json();}).then((data) => {setMidday(data);});
-      }, []);
-
-      const [afternoon, setAfternoon] = useState(null);
-
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments?start=15:00&end=18:00&date=2022-05-11")
-       .then((res) => {return res.json();}).then((data) => {setAfternoon(data);});
-      }, []);
-
-      const [evening, setEvening] = useState(null);
-
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments?start=18:00&end=21:00&date=2022-05-11")
-       .then((res) => {return res.json();}).then((data) => {setEvening(data);});
-      }, []);
-
-      const [lateevening, setLateevening] = useState(null);
-
-    useEffect(() => {
-       fetch("https://onedayviborg.webmcdm.dk/api/moments?start=21:00&end=24:00&date=2022-05-11")
-       .then((res) => {return res.json();}).then((data) => {setLateevening(data);});
-      }, []);
-
-    if(night && morningone && morning && beforedinner && midday && afternoon && evening && lateevening){
-
-      return (
-          <div>
-          <Navigation></Navigation>
-          <Header></Header>
-          <GallerySection  data={night} time={"00:00 - 03:00"} description={"NAT I VIBORG"}></GallerySection>
-          <GallerySection  data={morningone} time={"03:00 - 06:00"} description={"MORGEN"}></GallerySection>
-          <GallerySection data={morning} time={"06:00 - 09:00"} description={"MORGEN"}></GallerySection>
-          <GallerySection data={beforedinner} time={"09:00 - 12:00"} description={"FORMIDDAG"}></GallerySection>
-          <GallerySection data={midday} time={"12:00 - 15:00"} description={"MIDDAGSTIMERNE"}></GallerySection>
-          <GallerySection data={afternoon} time={"15:00 - 18:00"} description={"EFTERMIDDAG"}></GallerySection>
-          <GallerySection data={evening} time={"18:00 - 21:00"} description={"TIDLIG AFTEN"}></GallerySection>
-          <GallerySection data={lateevening} time={"21:00 - 24:00"} description={"SEN AFTEN"}></GallerySection>
-          <Slider></Slider>
-          <Footer></Footer>
-          </div>
-      )
-    }
-     
-     
-    
-  }
+  return (
+    <div>
+      <Header />
+      {/* Konverter hvert objekt til et array af arrays */}
+      {Object.entries(filteredData).map(([key, { items, label, time }]) => (
+        <GallerySection
+          key={key}
+          data={items}
+          description={label}
+          time={time}
+        />
+      ))}
+      <Slider />
+    </div>
+  );
+}
