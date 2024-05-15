@@ -13,9 +13,15 @@ const Header = () => {
           loop></video>
 
         <div className='header-content'>
-          <div className='header-logo'>
+
+
+         {/*  <div className='header-logo'>
             <img src='/logo-oneday-2-lines-fff.svg' alt='OneDayViborg Logo' />
-          </div>
+          </div> */}
+{/*           <div className="heading">
+            <h3>Et døgn i Viborg</h3>
+          </div> */}
+
           <div className='header-paragraph'>
             <p>
               En hel masse facetter fra livet i Viborg dokumenteret d. 16. maj
