@@ -22,6 +22,7 @@ body {
   min-height: 100vh;
   color: rgb(255, 255, 255);
   background-color: #000000;
+  overflow-x: hidden;
 }
 
 a {
