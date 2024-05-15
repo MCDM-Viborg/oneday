@@ -7,11 +7,11 @@ import Video from "../components/Video";
 export function Home() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://onedayviborg.webmcdm.dk/api/moments")
-      .then((res) => res.json())
-      .then(setData);
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://onedayviborg.webmcdm.dk/api/moments")
+  //     .then((res) => res.json())
+  //     .then(setData);
+  // }, []);
 
   // Omregn time-strengen til tal
   const timeToMinutes = useCallback((timeString) => {
@@ -91,18 +91,17 @@ export function Home() {
   return (
     <div>
       <Header />
-      {/* Viser videoen, hvis der ikke er nogen data (eller data er et tomt array) */}
-      {data || data.length === 0 ? (
-        <p className='waiting'>Venter på de første billeder..</p>
-      ) : (
-        Object.entries(filteredData).map(([key, { items, label, time }]) => (
-          <GallerySection
-            key={key}
-            data={items}
-            description={label}
-            time={time}
-          />
-        ))
+      {data && (
+        <>
+          {Object.entries(filteredData).map(([key, { items, label, time }]) => (
+            <GallerySection
+              key={key}
+              data={items}
+              description={label}
+              time={time}
+            />
+          ))}
+        </>
       )}
     </div>
   );

@@ -5,8 +5,9 @@ const Header = () => {
     <div className='header-container'>
       <section>
         <video
-          src='https://player.vimeo.com/progressive_redirect/playback/933639142/rendition/1080p/file.mp4?loc=external&log_user=0&signature=c6628dbb26a769b03107505512da4bbac6cb045197a6fe318b813b9a62e6709d'
+          src='https://player.vimeo.com/progressive_redirect/playback/946575315/rendition/1080p/file.mp4?loc=external&log_user=0&signature=f5b88a0e50f178da1d9c75f85420b33b57077ae1909eb222931a8ec6d82c6e86'
           className='bg-video'
+          controls
           autoPlay
           muted
           loop></video>
