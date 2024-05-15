@@ -34,8 +34,17 @@
 }
 
 .singleContainer-section-one-right-title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 100;
+}
+
+.description {
+  font-size: 18px;
+  padding: 1em 0;
+}
+
+.profile-name {
+  font-size: 17px;
 }
 
 @media (min-width: 768px) {

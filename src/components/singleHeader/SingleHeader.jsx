@@ -14,11 +14,14 @@ const SingleHeader = (foundImage) => {
           {foundImage.foundImage.title}
         </p>
         <p
+          className='description'
           dangerouslySetInnerHTML={{
             __html: foundImage.foundImage.description,
           }}
         />
-        <p>{"©" + foundImage.foundImage.profile.name}</p>
+        <p className='profile-name'>
+          {"©" + foundImage.foundImage.profile.name}
+        </p>
       </div>
     </div>
   );
