@@ -49,17 +49,6 @@ a {
   display: flex;
   justify-content: center;
 }
-
-.video-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1em;
-  padding: 2em;
-  margin-top: 5em;
-}
-
 .main-video {
   width: 50%;
   margin: 2em auto;
