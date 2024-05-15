@@ -91,7 +91,6 @@ export function Home() {
 
   return (
     <div>
-      <Navigation />
       <Header />
       {/* Konverter hvert objekt til et array af arrays */}
       {Object.entries(filteredData).map(([key, { items, label, time }]) => (
@@ -103,7 +102,6 @@ export function Home() {
         />
       ))}
       <Slider />
-      <Footer />
     </div>
   );
 }

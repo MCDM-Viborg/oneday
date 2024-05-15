@@ -1,9 +1,11 @@
-
-.singleContainer{
-    width: 100%;
+.singleContainer {
+  width: 100%;
+  min-height: 100vh;
+  align-content: start;
+  padding-bottom: 5em;
 }
 
-.singleContainer-inner{
-    width: 80%;
-    margin: 0 auto;
+.singleContainer-inner {
+  width: 80%;
+  margin: 0 auto;
 }
