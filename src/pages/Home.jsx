@@ -92,8 +92,8 @@ export function Home() {
     <div>
       <Header />
       {/* Viser videoen, hvis der ikke er nogen data (eller data er et tomt array) */}
-      {!data || data.length === 0 ? (
-        <Video />
+      {data || data.length === 0 ? (
+        <p className='waiting'>Venter på de første billeder..</p>
       ) : (
         Object.entries(filteredData).map(([key, { items, label, time }]) => (
           <GallerySection

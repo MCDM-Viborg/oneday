@@ -42,3 +42,9 @@ a {
   padding: 2em;
   margin: 3em 0;
 }
+
+.waiting {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+}
