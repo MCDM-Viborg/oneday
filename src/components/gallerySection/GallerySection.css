@@ -1,5 +1,6 @@
 .gallerySection-container {
-  margin: auto;
+  width: 80%;
+  margin: 100px auto;
 }
 
 .gallerySection-container-inner {
