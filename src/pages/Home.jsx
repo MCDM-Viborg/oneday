@@ -91,7 +91,7 @@ export function Home() {
   return (
     <>
       <Header />
-      {data - length > 0 ? (
+      {data.length > 0 ? (
         <>
           {Object.entries(filteredData).map(([key, { items, label, time }]) => (
             <GallerySection
