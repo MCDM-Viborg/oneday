@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useCallback, useMemo } from "react";
-import Navigation from "../components/navigation/Navigation";
 import Header from "../components/header/Header";
 import GallerySection from "../components/gallerySection/GallerySection";
 import Slider from "../components/slider/Slider";
-import Footer from "../components/footer/Footer";
+import Video from "../components/Video";
 
 export function Home() {
   const [data, setData] = useState([]);
@@ -92,16 +91,19 @@ export function Home() {
   return (
     <div>
       <Header />
-      {/* Konverter hvert objekt til et array af arrays */}
-      {Object.entries(filteredData).map(([key, { items, label, time }]) => (
-        <GallerySection
-          key={key}
-          data={items}
-          description={label}
-          time={time}
-        />
-      ))}
-      <Slider />
+      {/* Viser videoen, hvis der ikke er nogen data (eller data er et tomt array) */}
+      {!data || data.length === 0 ? (
+        <Video />
+      ) : (
+        Object.entries(filteredData).map(([key, { items, label, time }]) => (
+          <GallerySection
+            key={key}
+            data={items}
+            description={label}
+            time={time}
+          />
+        ))
+      )}
     </div>
   );
 }

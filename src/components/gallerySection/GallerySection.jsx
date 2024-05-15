@@ -6,11 +6,13 @@ const GallerySection = ({ data, description, time }) => {
   return (
     <div className='gallerySection-container'>
       {/* Render kun headeren hvis der er data */}
-      {data.length > 0 && (
+      {data.length > 0 ? (
         <header className='gallerySection-container-inner'>
           <h2 className='gallerySection-time'>{time}</h2>
           <h1 className='gallerySection-container-heading'>{description}</h1>
         </header>
+      ) : (
+        <p>VIDEO</p>
       )}
 
       <div className='gallery-section-container-images'>

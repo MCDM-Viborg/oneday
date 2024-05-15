@@ -35,3 +35,10 @@ a {
   text-decoration: none;
   color: white;
 }
+
+.video {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  margin: 3em 0;
+}
