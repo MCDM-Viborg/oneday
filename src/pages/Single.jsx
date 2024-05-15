@@ -27,8 +27,8 @@ export function Single(){
         <Navigation></Navigation>
         <div className="singleContainer-inner">
           <SingleHeader foundImage={result.moment}></SingleHeader>
-          <SingleGallery foundImage={result.moment}></SingleGallery>
         </div>
+          <SingleGallery foundImage={result.moment}></SingleGallery>
         <Footer></Footer>
       </div>
     )
