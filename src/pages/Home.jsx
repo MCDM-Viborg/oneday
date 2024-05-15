@@ -91,7 +91,7 @@ export function Home() {
   return (
     <>
       <Header />
-      {data && (
+      {data - length > 0 ? (
         <>
           {Object.entries(filteredData).map(([key, { items, label, time }]) => (
             <GallerySection
@@ -102,6 +102,11 @@ export function Home() {
             />
           ))}
         </>
+      ) : (
+        <p className='waiting'>
+          Ligeså snart de første moments fra d. 16. maj uploades, vises de
+          herunder..
+        </p>
       )}
     </>
   );
