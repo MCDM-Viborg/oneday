@@ -26,10 +26,12 @@ export function Single() {
   return (
     <div className='singleContainer'>
       {result && (
-        <div className='singleContainer-inner'>
-          <SingleHeader foundImage={result.moment}></SingleHeader>
-          <SingleGallery foundImage={result.moment}></SingleGallery>
-        </div>
+        <>
+          <div className='singleContainer-inner'>
+            <SingleHeader foundImage={result.moment}></SingleHeader>
+            <SingleGallery foundImage={result.moment}></SingleGallery>
+          </div>
+        </>
       )}
     </div>
   );

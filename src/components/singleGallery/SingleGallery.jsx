@@ -48,9 +48,11 @@ const SingleGallery = (foundImage) => {
                   width: "100%",
                 }}
               />
-              <p className='singleContainer-section-two-image-text'>
-                {item.title}
-              </p>
+              {item.title && (
+                <p className='singleContainer-section-two-image-text'>
+                  {item.title}
+                </p>
+              )}
             </div>
           ))}
         </Masonry>
