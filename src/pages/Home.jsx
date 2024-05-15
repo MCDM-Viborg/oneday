@@ -13,6 +13,19 @@ export function Home() {
   //     .then(setData);
   // }, []);
 
+  // useEffect(() => {
+  //   fetch("https://onedayviborg.webmcdm.dk/api/moments")
+  //     .then((res) => res.json())
+  //     .then((fetchedData) => {
+  //       // Filtrerer data baseret på årstallet i datoen, som er i strengformat 'YYYY-MM-DD'
+  //       const filteredByYear = fetchedData.filter((item) => {
+  //         const year = item.date.split("-")[0]; // Splitter datoen og tager det første element, som er årstallet
+  //         return year === "2024";
+  //       });
+  //       setData(filteredByYear);
+  //     });
+  // }, []);
+
   // Omregn time-strengen til tal
   const timeToMinutes = useCallback((timeString) => {
     const [hours, minutes] = timeString.split(":").map(Number);
