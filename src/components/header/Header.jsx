@@ -15,7 +15,7 @@ const Header = () => {
                         </div>
                         <div className="header-paragraph">
                             <p>
-                                En hel masse facetter fra livet i Viborg dokumenteret d. 30 maj 2024 af fotograf- og webudviklerstuderende ved Media College Denmark / Medieskolerne
+                                En hel masse facetter fra livet i Viborg dokumenteret d. 16. maj 2024 af fotograf- og webudviklerstuderende ved Media College Denmark / Medieskolerne
                             </p>
                         </div>
 
