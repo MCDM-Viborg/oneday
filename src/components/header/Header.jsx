@@ -13,10 +13,7 @@ const Header = () => {
 
         <div className='header-content'>
           <div className='header-logo'>
-            <img
-              src='./public/logo-oneday-2-lines-fff.svg'
-              alt='OneDayViborg Logo'
-            />
+            <img src='/logo-oneday-2-lines-fff.svg' alt='OneDayViborg Logo' />
           </div>
           <div className='header-paragraph'>
             <p>
