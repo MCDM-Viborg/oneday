@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./Header.css";
-import { GoUnmute, GoMute } from "react-icons/go";
+import { GoUnmute, GoMute, GoChevronDown } from "react-icons/go";
 
 const Header = () => {
   const videoRef = useRef(null);
@@ -36,6 +36,7 @@ const Header = () => {
             {isMuted ? <GoMute /> : <GoUnmute />}
           </button>
         </div>
+        <a href="#ident" className="arrow"><GoChevronDown/></a>
       </section>
     </div>
   );

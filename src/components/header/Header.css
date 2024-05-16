@@ -51,6 +51,17 @@
   font-size: 30px;
 }
 
+
+.arrow {
+  display: none;
+}
+
+/* .arrow svg {
+  width: 50px;
+  height: 50px;
+} */
+
+
 @media (min-width: 768px) {
   .header-container {
     height: 100vh;
@@ -73,4 +84,21 @@
     padding-top: 20px;
     font-size: 40px;
   }
+
+  .arrow {
+    display: block;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 2;
+    align-self: end;
+    justify-self: center;
+    margin-bottom: 60px;
+  }
+  
+  .arrow svg {
+    width: 50px;
+    height: 50px;
+  }
+
+
 }
