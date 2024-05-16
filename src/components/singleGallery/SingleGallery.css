@@ -33,9 +33,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2em;
+  padding: 2em;
 }
 
 .modal-box-img {
   height: 80%;
   width: auto;
+}
+
+.modal-text {
+  padding: 0;
+  width: 25%;
+}
+
+@media (max-width: 768px) {
+  .modal-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-text {
+    width: 100%;
+  }
 }

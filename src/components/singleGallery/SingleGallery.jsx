@@ -8,10 +8,18 @@ import { useState } from "react";
 const SingleGallery = (foundImage) => {
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState();
+  const [imageTitle, setImageTitle] = useState("");
 
-  const handleOpen = (e) => {
-    setOpen(!open);
-    setImage(e.target.src);
+  const handleOpen = (e, item) => {
+    setOpen(true);
+    setImage(item.picture);
+    setImageTitle(item.title);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setImage("");
+    setImageTitle("");
   };
 
   return (
@@ -21,23 +29,8 @@ const SingleGallery = (foundImage) => {
           {foundImage.foundImage.pictures.map((item, index) => (
             <div
               key={index}
-              onClick={handleOpen}
+              onClick={(e) => handleOpen(e, item)}
               className='singleContainer-section-two-image'>
-              <Modal
-                open={open}
-                slots={{ backdrop: Backdrop }}
-                slotProps={{
-                  backdrop: {
-                    sx: {
-                      backgroundColor: "rgba(0, 0, 0, 0.22)",
-                    },
-                  },
-                }}>
-                <Box className='modal-box'>
-                  <img className='modal-box-img' src={image} alt='' />
-                </Box>
-              </Modal>
-
               <img
                 srcSet={`${item.picture}?w=162&auto=format&dpr=2 2x`}
                 src={`${item.picture}?w=162&auto=format`}
@@ -56,6 +49,34 @@ const SingleGallery = (foundImage) => {
             </div>
           ))}
         </Masonry>
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          slots={{ backdrop: Backdrop }}
+          slotProps={{
+            backdrop: {
+              sx: {
+                backgroundColor: "rgba(0, 0, 0, 0.863)",
+              },
+            },
+          }}>
+          <Box
+            className='modal-box'
+            onClick={handleClose}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100vh",
+              cursor: "pointer",
+            }}>
+            <img className='modal-box-img' src={image} alt={imageTitle} />
+            <div className='modal-text'>
+              <p className='imageTitle'>{imageTitle}</p>
+            </div>
+          </Box>
+        </Modal>
       </div>
     </div>
   );
