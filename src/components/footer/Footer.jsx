@@ -21,7 +21,7 @@ const Footer = () => {
           <div className='mcdm-container'>
             <div className='mcdm-logo-container'>
               <img
-                src='./MCDM_Logo-Full_Negative-White.png'
+                src='../MCDM_Logo-Full_Negative-White.png'
                 alt='Media College Denmark Logo'
                 className='mcdm-logo-img'
               />
