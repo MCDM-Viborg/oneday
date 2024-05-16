@@ -12,6 +12,7 @@
 
 
 .header-grid {
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -37,9 +38,8 @@
 }
 
 .header-paragraph p {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 200;
-  opacity: 0.7;
 }
 
 @media (min-width: 768px) {
@@ -47,12 +47,15 @@
     .header-container {
         height: 100vh;
     }
-    
 
     .header-paragraph {
         width: 50%;
         padding: 0 0 150px 50px;
     }
+
+    .header-paragraph p {
+        font-size: 20px;
+      }
 
     .header-logo {
         width: 50%;
