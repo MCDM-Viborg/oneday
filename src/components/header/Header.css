@@ -28,18 +28,29 @@
   object-fit: cover;
 }
 
-
-.header-paragraph {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    z-index: 2;
-    align-self: end;
-    padding: 20px;
+.header-grid-inner{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  z-index: 2;
+  align-self: end;
+  padding: 20px;
 }
 
 .header-paragraph p {
   font-size: 16px;
   font-weight: 200;
+}
+
+
+
+.muteBtn{
+  background-color: transparent;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    cursor: pointer;
+    font-size: 30px;
+
 }
 
 @media (min-width: 768px) {
@@ -48,7 +59,7 @@
         height: 100vh;
     }
 
-    .header-paragraph {
+    .header-grid-inner{
         width: 50%;
         padding: 0 0 150px 50px;
     }
@@ -59,5 +70,11 @@
 
     .header-logo {
         width: 50%;
+    }
+
+    .muteBtn{
+        padding-top: 20px;
+        font-size: 40px;
+    
     }
 }
