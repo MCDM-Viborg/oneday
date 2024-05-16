@@ -4,7 +4,7 @@ import "./GallerySection.css";
 
 const GallerySection = ({ data, description, time }) => {
   return (
-    <div className='gallerySection-container'>
+    <div id="ident" className='gallerySection-container'>
       {/* Render kun headeren hvis der er data */}
       {data.length > 0 ? (
         <>
