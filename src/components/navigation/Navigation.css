@@ -13,12 +13,5 @@
 }
 
 .logo {
-  visibility: hidden;
-  transition: visibility 0.3s ease-in-out;
   width: 200px;
-}
-
-.logo-visible {
-  visibility: visible;
-  transition: visibility 0.3s ease-in-out;
 }
