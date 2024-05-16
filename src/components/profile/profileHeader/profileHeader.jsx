@@ -4,7 +4,7 @@ const ProfileHeaderComp = ({ foundImage }) => {
   console.log("resultt", foundImage);
 
   const momentIndex = foundImage.momentIds.length;
-
+  const count = foundImage.moments.filter((moment) => moment.approved).length;
   return (
     <div className="profle-upper-section">
       <div className="profile-upper-left">
@@ -13,7 +13,7 @@ const ProfileHeaderComp = ({ foundImage }) => {
       <div className="profile-upper-right">
         <p className="profile-name">{foundImage.name}</p>
         <h3 className="profile-name">{foundImage.position}</h3>
-        <h4>Øjeblike Uploaded: {momentIndex} </h4>
+        <div>Uploaded Øjeblikke: {count}</div>
       </div>
     </div>
   );
