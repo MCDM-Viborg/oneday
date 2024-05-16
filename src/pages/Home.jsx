@@ -7,11 +7,11 @@ import Video from "../components/Video";
 export function Home() {
   const [data, setData] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("https://onedayviborg.webmcdm.dk/api/moments")
-  //     .then((res) => res.json())
-  //     .then(setData);
-  // }, []);
+  useEffect(() => {
+    fetch("https://onedayviborg.webmcdm.dk/api/moments")
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
 
   // useEffect(() => {
   //   fetch("https://onedayviborg.webmcdm.dk/api/moments")
