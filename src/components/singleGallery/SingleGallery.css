@@ -11,6 +11,7 @@
 
 .singleContainer-section-two-image {
   position: relative;
+  cursor: pointer;
 }
 
 .singleContainer-section-two-image-text {
