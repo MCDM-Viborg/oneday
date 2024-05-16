@@ -13,9 +13,9 @@ const BurgerMenu = () => {
       <button
         className={`burgerbtn ${open ? "show" : ""}`}
         onClick={onClickHandler}>
-        <div className={`bar ${open ? "barWhite" : ""}`}></div>
-        <div className={`bar ${open ? "barWhite" : ""}`}></div>
-        <div className={`bar ${open ? "barWhite" : ""}`}></div>
+        <div className={`bar ${open ? "barWhite" : ""} bar1`}></div>
+        <div className={`bar ${open ? "barWhite" : ""} bar2`}></div>
+        <div className={`bar ${open ? "barWhite" : ""} bar3`}></div>
       </button>
 
       <ul className={`navul ${open ? "show" : ""}`} onClick={onClickHandler}>
