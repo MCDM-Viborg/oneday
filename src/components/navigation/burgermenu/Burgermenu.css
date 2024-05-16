@@ -3,6 +3,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+  width: 100%;
 }
 
 /* burger-btn contains the three bars */
@@ -44,7 +46,6 @@
   list-style-type: none;
   z-index: 2;
   text-align: center;
-  padding-top: 4em;
 }
 
 /* nav-ul will show */
@@ -70,3 +71,9 @@
 .navlink:hover {
   color: #fa96aa;
 }
+
+/* @media (max-width: 768px) {
+  .navul {
+    padding-top: 0;
+  }
+} */

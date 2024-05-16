@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import "./Navigation.css";
 import BurgerMenu from "./burgermenu/Burgermenu.jsx";
 
