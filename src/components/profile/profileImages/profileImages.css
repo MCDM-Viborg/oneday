@@ -1,0 +1,35 @@
+.profle-lower-section h2 {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.profle-lower-section {
+  padding: 5%;
+}
+
+.profileGallerySection {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.profileGallerySection img {
+  margin-top: 20px;
+  max-width: 400px;
+  min-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .profileGallerySection {
+    justify-content: center;
+  }
+
+  .profileGallerySection img {
+    max-width: 300px;
+    min-width: 300px;
+  }
+
+  .profle-lower-section {
+    padding: 5% 8%;
+  }
+}

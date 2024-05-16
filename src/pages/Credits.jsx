@@ -16,15 +16,18 @@ export function Credits() {
   }, []);
 
   return (
-    <div className='creditsContainer'>
-      <div className='creditsContainer-inner'>
-        <h1 className='creditsContainer-heading'>
+    <div className="creditsContainer">
+      <div className="creditsContainer-inner">
+        <h1 className="creditsContainer-heading">
           Fotograf- og webudviklerelever - One Day Viborg
         </h1>
 
-        <div className='credits-section-container-images'>
+        <div className="credits-section-container-images">
           {result?.map((obj) => (
-            <Image key={obj._id} data={obj}></Image>
+            <a href={"../profile/" + obj._id}>
+              {" "}
+              <Image key={obj._id} data={obj}></Image>
+            </a>
           ))}
         </div>
       </div>
