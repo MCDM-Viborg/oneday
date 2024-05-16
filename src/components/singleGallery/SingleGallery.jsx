@@ -72,9 +72,11 @@ const SingleGallery = (foundImage) => {
               cursor: "pointer",
             }}>
             <img className='modal-box-img' src={image} alt={imageTitle} />
-            <div className='modal-text'>
-              <p className='imageTitle'>{imageTitle}</p>
-            </div>
+            {imageTitle && (
+              <div className='modal-text'>
+                <p className='imageTitle'>{imageTitle}</p>
+              </div>
+            )}
           </Box>
         </Modal>
       </div>
