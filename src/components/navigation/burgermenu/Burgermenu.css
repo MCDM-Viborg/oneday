@@ -49,13 +49,11 @@
 /* The nav-ul contains the nav-items (will be displayed when click on burger-menu happens, so hidden by default) */
 .navul {
   width: 100%;
-  height: fit-content;
   position: absolute;
   top: 0px;
   left: 0;
   background-color: #00000030;
   display: none;
-  place-content: end;
   padding: 30px 50px;
   list-style-type: none;
   z-index: 2;

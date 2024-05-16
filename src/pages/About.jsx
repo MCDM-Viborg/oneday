@@ -1,7 +1,5 @@
 import AboutHeader from "../components/aboutHeader/AboutHeader";
 import AboutSection from "../components/aboutSection/AboutSection";
-import Footer from "../components/footer/Footer";
-import Navigation from "../components/navigation/Navigation";
 import "./About.css";
 import { useEffect, useState } from "react";
 
