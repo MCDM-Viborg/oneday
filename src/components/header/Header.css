@@ -8,7 +8,6 @@
   justify-content: start;
   align-items: center;
   color: white;
-  position: relative;
 }
 
 .bg-video {
@@ -54,11 +53,17 @@
 }
 
 @media (min-width: 768px) {
-  .header-paragraph {
-    width: 50%;
-  }
 
-  .header-logo {
-    width: 50%;
-  }
+    .header-container {
+        height: 100vh;
+    }
+    
+
+    .header-paragraph {
+        width: 50%;
+    }
+
+    .header-logo {
+        width: 50%;
+    }
 }
